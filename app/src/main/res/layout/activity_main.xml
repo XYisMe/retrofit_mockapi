@@ -10,7 +10,7 @@
         android:id="@+id/btnScan"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Check In"
+        android:text="Check In SCAN"
         android:textAllCaps="false"
         android:textSize="16sp"
         android:layout_margin="20dp"
