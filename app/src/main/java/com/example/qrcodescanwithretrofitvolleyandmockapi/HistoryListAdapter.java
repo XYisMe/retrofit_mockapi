@@ -2,6 +2,7 @@ package com.example.qrcodescanwithretrofitvolleyandmockapi;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.AsyncDifferConfig;
@@ -21,6 +22,21 @@ public class HistoryListAdapter extends ListAdapter<History, HistoryListAdapter.
         super(diffCallback);
     }
 
+    static class HistoryViewHolder extends RecyclerView.ViewHolder{
+
+        //bind the data (item in activity_main.xml ->  3 textview)
+        private TextView tv_location;
+        private TextView tv_date;
+        private TextView tv_time;
+
+        public HistoryViewHolder(@NonNull View itemView) {
+            super(itemView);
+            tv_location = itemView.findViewById(R.id.location_text);
+            tv_date = itemView.findViewById(R.id.date_text);
+            tv_time = itemView.findViewById(R.id.time_text);
+        }
+    }
+
     protected HistoryListAdapter(@NonNull AsyncDifferConfig<History> config) {
         super(config);
     }
@@ -36,9 +52,9 @@ public class HistoryListAdapter extends ListAdapter<History, HistoryListAdapter.
 
     }
 
-    public class HistoryViewHolder extends RecyclerView.ViewHolder {
-        public HistoryViewHolder(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
+//    public class HistoryViewHolder extends RecyclerView.ViewHolder {
+//        public HistoryViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//        }
+//    }
 }
